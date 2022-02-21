@@ -19,9 +19,9 @@ moveit_grasps:
     # Suction gripper specific settings
     # --------------------------------
     # Visual debug options
-    debug_top_grasps: false
+    debug_top_grasps: true
     # Show suction gripper overhang
-    show_grasp_overhang: false
+    show_grasp_overhang: true
 
   ####################################
   # The grasp filter filters out unreachable GraspCandidates and populates valid GraspCandidates' pregrasp_ik_solution_ and grasp_ik_solution_'s
@@ -50,6 +50,6 @@ moveit_grasps:
   planner:
     # Cartesian planning
     statistics_verbose: true
-    verbose_cartesian_filtering: false
-    show_cartesian_waypoints: false
-    collision_checking_verbose: false
+    verbose_cartesian_filtering: true
+    show_cartesian_waypoints: true
+    collision_checking_verbose: true

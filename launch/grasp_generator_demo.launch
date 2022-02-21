@@ -24,11 +24,6 @@
   <arg unless="$(arg valgrind)" name="launch_prefix3" value="" />
   <arg     if="$(arg valgrind)" name="launch_prefix3" value="valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all --track-origins=yes -v" />
 
-  <!-- PANDA -->
-  <include file="$(find moveit_grasps)/launch/load_panda.launch">
-    <arg name="gripper" value="$(arg gripper)"/>
-  </include>
-
   <!-- Start the demo -->
   <node name="moveit_grasps_demo" launch-prefix="$(arg launch_prefix) $(arg launch_prefix2) $(arg launch_prefix3)" pkg="moveit_grasps"
   type="moveit_grasps_grasp_generator_demo" output="screen" args="$(arg command_args)">
