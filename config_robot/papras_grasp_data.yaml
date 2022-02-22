@@ -40,18 +40,18 @@ hand1:
     define_tcp_by_name: false
     # tcp_name: "robot1/end_effector_link"
     # Alternatively, if we cannot add a frame for the tool center point, we can define tcp by transform
-    tcp_to_eef_mount_transform :  [-0.07, 0, 0, 0, 0, 0] # NOTE: Imaginary point in the middle
+    tcp_to_eef_mount_transform :  [-0.10, 0, 0, 0, 0, 0] # NOTE: Imaginary point in the middle
 
     # Target durations in seconds for reaching pregrasp and grasp positions in end effector motions
-    pregrasp_time_from_start : 3
-    grasp_time_from_start : 8
+    pregrasp_time_from_start : 15
+    grasp_time_from_start : 30
 
     # Joint names and state values for the end effector.
     # The names should match the values of pregrasp_posture and grasp_posture.
     # These values can be left empty if end_effector_type is 'suction'
     pregrasp_posture : [0.01]  # open position
     grasp_posture : [1.0]      # close position
-    joints : ['robot1/gripper']
+    joints : ['robot1/soft_gripper_jaw']
 
     ##############################
     ##  Finger gripper parameters
@@ -59,7 +59,7 @@ hand1:
 
     # Distances between fingers matching to pregrasp_posture and grasp_posture, in meters
     max_finger_width: 0.40
-    min_finger_width: 0.01
+    min_finger_width: 0.05
 
     # Maximum allowed finger width for a grasp.
     # This value should be considerably smaller than max_finger_width
